@@ -18,8 +18,12 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="#hero" class="logo">
-                <i class="fa-solid fa-print"></i> RAFIF <span>COPY CENTER</span>
+                <img src="Rafif Copy Print Shop Logo.png"
+                
+                <img src="path/to/logo.png" alt="Logo Rafif Copy Center" class="logo-img">
+                <span>RAFIF <span>COPY CENTER</span></span>
             </a>
+            
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="#hero">Beranda</a></li>
@@ -29,15 +33,22 @@
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <i class="fa-solid fa-bars"></i>
+
+            <div class="nav-actions">
+                <!-- Tombol Mode Gelap / Terang -->
+                <button id="themeToggle" class="theme-toggle" title="Ubah Mode Tampilan">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="container hero-content">
+        <div class="container hero-content reveal">
             <h1>Solusi Cepat & Berkualitas untuk Semua Keperluan Cetak Anda</h1>
             <p>Rafif Copy Center melayani fotokopi kilat, print dokumen, pengetikan, scan, cetak foto, hingga penyediaan Alat Tulis Kantor (ATK) terlengkap di Rejotangan, Tulungagung.</p>
             <div class="hero-buttons">
@@ -49,18 +60,18 @@
 
     <!-- About Section -->
     <section id="about" class="about section-padding">
-        <div class="container grid-2">
+        <div class="container grid-2 reveal">
             <div class="about-image">
-                <!-- Ganti src dengan file gambar usaha Anda -->
+                <!-- TEMPAT FOTO TOKO / MESIN -->
                 <img src="path/to/foto-toko-atau-mesin.jpg" alt="Rafif Copy Center">
             </div>
             <div class="about-text">
                 <span class="badge">Tentang Usaha</span>
                 <h2>Mitra Terpercaya Pencetakan & Alat Tulis Kantor</h2>
-                <p><strong>Rafif Copy Center (Toko Raffif)</strong> adalah penyedia jasa fotokopi dan *digital printing* terdepan yang berlokasi di Jl. Puskesmas, Banjarejo, Rejotangan, Tulungagung.</p>
+                <p><strong>Rafif Copy Center (Toko Raffif)</strong> adalah penyedia jasa fotokopi dan <em>digital printing</em> terdepan yang berlokasi di Jl. Puskesmas, Banjarejo, Rejotangan, Tulungagung[cite: 1].</p>
                 <p>Kami berkomitmen memberikan hasil cetak yang tajam, presisi, dan pengerjaan tepat waktu. Kami siap melayani kebutuhan pelajar, mahasiswa, instansi, maupun umum.</p>
                 <div class="npwp-box">
-                    <i class="fa-solid fa-file-invoice"></i> <strong>NPWP Usaha:</strong> 83.368.774.2-629.000
+                    <i class="fa-solid fa-file-invoice"></i> <strong>NPWP Usaha:</strong> 83.368.774.2-629.000[cite: 1]
                 </div>
             </div>
         </div>
@@ -69,14 +80,15 @@
     <!-- Services / Products Section -->
     <section id="services" class="services section-padding bg-light">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Layanan & Produk Kami</h2>
                 <p>Berbagai pilihan solusi cetak dan alat tulis lengkap dengan harga terjangkau</p>
             </div>
             <div class="services-grid">
                 <!-- Item 1 -->
-                <div class="card-service">
+                <div class="card-service reveal">
                     <div class="card-img">
+                        <!-- TEMPAT FOTO LAYANAN 1 -->
                         <img src="path/to/foto-fotokopi.jpg" alt="Fotokopi & Print Dokumen">
                     </div>
                     <div class="card-body">
@@ -86,8 +98,9 @@
                     </div>
                 </div>
                 <!-- Item 2 -->
-                <div class="card-service">
+                <div class="card-service reveal">
                     <div class="card-img">
+                        <!-- TEMPAT FOTO LAYANAN 2 -->
                         <img src="path/to/foto-pengetikan.jpg" alt="Pengetikan & Scan Dokumen">
                     </div>
                     <div class="card-body">
@@ -97,8 +110,9 @@
                     </div>
                 </div>
                 <!-- Item 3 -->
-                <div class="card-service">
+                <div class="card-service reveal">
                     <div class="card-img">
+                        <!-- TEMPAT FOTO LAYANAN 3 -->
                         <img src="path/to/foto-cetakfoto.jpg" alt="Cetak Foto & Laminating">
                     </div>
                     <div class="card-body">
@@ -108,8 +122,9 @@
                     </div>
                 </div>
                 <!-- Item 4 -->
-                <div class="card-service">
+                <div class="card-service reveal">
                     <div class="card-img">
+                        <!-- TEMPAT FOTO LAYANAN 4 -->
                         <img src="path/to/foto-atk.jpg" alt="Alat Tulis Kantor">
                     </div>
                     <div class="card-body">
@@ -122,20 +137,25 @@
         </div>
     </section>
 
-    <!-- Testimonials Section (Carousel) -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section-padding">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Ulasan Pelanggan</h2>
                 <p>Apa kata mereka yang telah mempercayakan kebutuhan cetak di tempat kami?</p>
             </div>
             
-            <div class="carousel-container">
+            <!-- Carousel Slider -->
+            <div class="carousel-container reveal">
                 <div class="carousel-track-container">
                     <ul class="carousel-track" id="testimonialTrack">
                         <!-- Slide 1 -->
                         <li class="carousel-slide active-slide">
                             <div class="testimonial-card">
+                                <div class="testimonial-avatar">
+                                    <!-- TEMPAT FOTO PELANGGAN 1 -->
+                                    <img src="path/to/foto-pelanggan-1.jpg" alt="Budi Santoso">
+                                </div>
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </div>
@@ -147,6 +167,10 @@
                         <!-- Slide 2 -->
                         <li class="carousel-slide">
                             <div class="testimonial-card">
+                                <div class="testimonial-avatar">
+                                    <!-- TEMPAT FOTO PELANGGAN 2 -->
+                                    <img src="path/to/foto-pelanggan-2.jpg" alt="Siti Rahmawati">
+                                </div>
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </div>
@@ -158,6 +182,10 @@
                         <!-- Slide 3 -->
                         <li class="carousel-slide">
                             <div class="testimonial-card">
+                                <div class="testimonial-avatar">
+                                    <!-- TEMPAT FOTO PELANGGAN 3 -->
+                                    <img src="path/to/foto-pelanggan-3.jpg" alt="Dedi Pratama">
+                                </div>
                                 <div class="stars">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </div>
@@ -182,17 +210,57 @@
                     <button class="carousel-indicator"></button>
                 </div>
             </div>
+
+            <!-- Form Tambah Ulasan Mandiri dengan Tempat Foto -->
+            <div class="review-form-wrapper reveal">
+                <h3>Beri Ulasan Anda</h3>
+                <form id="reviewForm" class="review-form">
+                    <div id="reviewAlert" class="alert-message"></div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewName">Nama Lengkap *</label>
+                            <input type="text" id="reviewName" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewRole">Status / Pekerjaan</label>
+                            <input type="text" id="reviewRole" placeholder="Contoh: Mahasiswa, Umum, dsb.">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewRating">Rating Nilai *</label>
+                            <select id="reviewRating" required>
+                                <option value="5">⭐⭐⭐⭐⭐ (5 / 5)</option>
+                                <option value="4">⭐⭐⭐⭐ (4 / 5)</option>
+                                <option value="3">⭐⭐⭐ (3 / 5)</option>
+                                <option value="2">⭐⭐ (2 / 5)</option>
+                                <option value="1">⭐ (1 / 5)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewPhoto">Link / URL Foto Profil (Tempat Foto)</label>
+                            <input type="text" id="reviewPhoto" placeholder="Contoh: https://link-foto-anda.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewComment">Ulasan Anda *</label>
+                        <textarea id="reviewComment" rows="3" placeholder="Bagikan pengalaman Anda saat menggunakan jasa kami..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Kirim Ulasan</button>
+                </form>
+            </div>
+
         </div>
     </section>
 
     <!-- Form Kontak Section -->
     <section id="contact" class="contact section-padding bg-light">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title reveal">
                 <h2>Hubungi Kami</h2>
-                <p>Kirimkan pertanyaan atau informasi pemesanan Anda melalui formulir di bawah ini</p>
+                <p>Kirimkan pertanyaan atau pesan langsung melalui formulir di bawah ini</p>
             </div>
-            <div class="contact-wrapper">
+            <div class="contact-wrapper reveal">
                 <form id="contactForm" class="contact-form" novalidate>
                     <div id="alertMessage" class="alert-message"></div>
                     <div class="form-group">
@@ -222,24 +290,32 @@
             <div class="footer-info">
                 <h3>RAFIF COPY CENTER</h3>
                 <p>Pusat Fotokopi, Digital Printing, Pengetikan, Scan, Cetak Foto, dan Alat Tulis Kantor Terpercaya di Tulungagung.</p>
-                <p><strong>NPWP:</strong> 83.368.774.2-629.000</p>
+                <p><strong>NPWP:</strong> 83.368.774.2-629.000[cite: 1]</p>
             </div>
+            
             <div class="footer-contact">
-                <h4>Informasi Kontak</h4>
-                <p><i class="fa-solid fa-location-dot"></i> Jl. Puskesmas - Banjarejo - Rejotangan - Tulungagung</p>
-                <p><i class="fa-solid fa-phone"></i> 081 556 475 839 / 0821-4143-0354</p>
-                <p><i class="fa-solid fa-envelope"></i> Banjarejocopy@gmail.com</p>
-            </div>
-            <div class="footer-social">
-                <h4>Media Sosial & Peta</h4>
-                <div class="social-links">
-                    <a href="mailto:Banjarejocopy@gmail.com" title="Email Kami"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://wa.me/6281556475839" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://maps.app.goo.gl/H5a5d38ygu1jLqtY7" target="_blank" title="Google Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+                <h4>Informasi & Akses Kontak Direct</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Jl. Puskesmas - Banjarejo - Rejotangan - Tulungagung[cite: 1]</p>
+                
+                <div class="direct-buttons">
+                    <a href="tel:081556475839" class="btn-app btn-phone">
+                        <i class="fa-solid fa-phone"></i> Hubungi 081556475839[cite: 1]
+                    </a>
+                    <a href="https://wa.me/6281556475839" target="_blank" class="btn-app btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Sekarang
+                    </a>
+                    <a href="mailto:banjarejocopy@gmail.com" target="_blank" class="btn-app btn-email">
+                        <i class="fa-solid fa-envelope"></i> Kirim Email ke Gmail[cite: 1]
+                    </a>
                 </div>
+            </div>
+
+            <div class="footer-social">
+                <h4>Aplikasi Peta Lokasi</h4>
+                <p class="footer-desc">Klik tombol di bawah ini untuk langsung diarahkan ke peta navigasi Google Maps toko kami:</p>
                 <div class="map-link">
-                    <a href="https://maps.app.goo.gl/H5a5d38ygu1jLqtY7" target="_blank" class="btn-map">
-                        <i class="fa-solid fa-location-arrow"></i> Buka Alamat di Google Maps
+                    <a href="https://maps.app.goo.gl/H5a5d38ygu1jLqtY7" target="_blank" class="btn-app btn-maps">
+                        <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps Toko
                     </a>
                 </div>
             </div>
