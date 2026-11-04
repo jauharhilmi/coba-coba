@@ -1,154 +1,256 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banjarejo Copy</title>
+    <title>Rafif Copy Center - Jasa Fotokopi & Digital Printing Tulungagung</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
-        <h2>Banjarejo <span>Copy</span></h2>
-
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <ul id="navMenu">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#layanan">Layanan</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Selamat Datang di<br>Banjarejo Copy</h1>
-        <p>
-            Solusi kebutuhan fotokopi, print, pengetikan,
-            laminating, scan, top up e-wallet dan alat tulis kantor.
-        </p>
-        <a href="https://wa.me/6282141530354" class="btn">
-            Pesan Sekarang
-        </a>
-    </div>
-</section>
-
-<section id="about" class="about">
-    <h2>Tentang Kami</h2>
-    <p>
-        Banjarejo Copy merupakan usaha yang menyediakan
-        berbagai layanan kebutuhan dokumen dan perlengkapan kantor.
-        Kami berkomitmen memberikan pelayanan yang ramah,
-        cepat, praktis, dan terjangkau.
-    </p>
-</section>
-
-<section id="layanan" class="services">
-    <h2>Layanan dan Produk Kami</h2>
-
-    <div class="service-container">
-
-        <div class="card">
-            <div class="emoji">📄</div>
-            <h3>Fotokopi</h3>
-            <p>Fotokopi dokumen hitam putih maupun berwarna.</p>
+    <!-- Header / Navbar Sticky -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">
+                <i class="fa-solid fa-print"></i> RAFIF <span>COPY CENTER</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#testimonials">Ulasan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
+    </header>
 
-        <div class="card">
-            <div class="emoji">🖨️</div>
-            <h3>Print</h3>
-            <p>Melayani cetak dokumen dan berbagai tugas.</p>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container hero-content">
+            <h1>Solusi Cepat & Berkualitas untuk Semua Keperluan Cetak Anda</h1>
+            <p>Rafif Copy Center melayani fotokopi kilat, print dokumen, pengetikan, scan, cetak foto, hingga penyediaan Alat Tulis Kantor (ATK) terlengkap di Rejotangan, Tulungagung.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Pesan Sekarang</a>
+                <a href="#services" class="btn btn-outline">Lihat Layanan</a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="emoji">⌨️</div>
-            <h3>Pengetikan</h3>
-            <p>Jasa pengetikan surat, tugas, dan dokumen.</p>
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container grid-2">
+            <div class="about-image">
+                <!-- Ganti src dengan file gambar usaha Anda -->
+                <img src="path/to/foto-toko-atau-mesin.jpg" alt="Rafif Copy Center">
+            </div>
+            <div class="about-text">
+                <span class="badge">Tentang Usaha</span>
+                <h2>Mitra Terpercaya Pencetakan & Alat Tulis Kantor</h2>
+                <p><strong>Rafif Copy Center (Toko Raffif)</strong> adalah penyedia jasa fotokopi dan *digital printing* terdepan yang berlokasi di Jl. Puskesmas, Banjarejo, Rejotangan, Tulungagung.</p>
+                <p>Kami berkomitmen memberikan hasil cetak yang tajam, presisi, dan pengerjaan tepat waktu. Kami siap melayani kebutuhan pelajar, mahasiswa, instansi, maupun umum.</p>
+                <div class="npwp-box">
+                    <i class="fa-solid fa-file-invoice"></i> <strong>NPWP Usaha:</strong> 83.368.774.2-629.000
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="emoji">📑</div>
-            <h3>Laminating</h3>
-            <p>Melindungi dokumen agar lebih awet.</p>
+    <!-- Services / Products Section -->
+    <section id="services" class="services section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan & Produk Kami</h2>
+                <p>Berbagai pilihan solusi cetak dan alat tulis lengkap dengan harga terjangkau</p>
+            </div>
+            <div class="services-grid">
+                <!-- Item 1 -->
+                <div class="card-service">
+                    <div class="card-img">
+                        <img src="path/to/foto-fotokopi.jpg" alt="Fotokopi & Print Dokumen">
+                    </div>
+                    <div class="card-body">
+                        <div class="icon-box"><i class="fa-solid fa-copy"></i></div>
+                        <h3>Fotokopi & Print Dokumen</h3>
+                        <p>Cetak dokumen hitam-putih dan warna dengan mesin berteknologi tinggi untuk hasil cetak tajam dan cepat.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="card-service">
+                    <div class="card-img">
+                        <img src="path/to/foto-pengetikan.jpg" alt="Pengetikan & Scan Dokumen">
+                    </div>
+                    <div class="card-body">
+                        <div class="icon-box"><i class="fa-solid fa-keyboard"></i></div>
+                        <h3>Pengetikan & Scan Dokumen</h3>
+                        <p>Jasa ketik rapi sesuai format standar serta pengubahan dokumen fisik menjadi file digital (PDF/JPG).</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="card-service">
+                    <div class="card-img">
+                        <img src="path/to/foto-cetakfoto.jpg" alt="Cetak Foto & Laminating">
+                    </div>
+                    <div class="card-body">
+                        <div class="icon-box"><i class="fa-solid fa-image"></i></div>
+                        <h3>Cetak Foto & Jilid</h3>
+                        <p>Cetak foto berbagai ukuran (pas foto, cetak album) serta layanan jilid mika, lakban, hingga hard cover.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="card-service">
+                    <div class="card-img">
+                        <img src="path/to/foto-atk.jpg" alt="Alat Tulis Kantor">
+                    </div>
+                    <div class="card-body">
+                        <div class="icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
+                        <h3>Perdagangan ATK</h3>
+                        <p>Menyediakan beragam alat tulis kantor dan sekolah lengkap seperti kertas, buku, pulpen, dan perlengkapan lainnya.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="emoji">📷</div>
-            <h3>Scan</h3>
-            <p>Mengubah dokumen fisik menjadi file digital.</p>
+    <!-- Testimonials Section (Carousel) -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ulasan Pelanggan</h2>
+                <p>Apa kata mereka yang telah mempercayakan kebutuhan cetak di tempat kami?</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" id="testimonialTrack">
+                        <!-- Slide 1 -->
+                        <li class="carousel-slide active-slide">
+                            <div class="testimonial-card">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p>"Pelayanan fotokopi sangat cepat dan hasilnya bersih. Sangat terbantu saat butuh cetak berkas tugas mendadak!"</p>
+                                <h4>Budi Santoso</h4>
+                                <span>Pelanggan Setia</span>
+                            </div>
+                        </li>
+                        <!-- Slide 2 -->
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p>"Jasa pengetikannya rapi banget. Harganya bersahabat dan pilihan ATK di tokonya lengkap."</p>
+                                <h4>Siti Rahmawati</h4>
+                                <span>Mahasiswi</span>
+                            </div>
+                        </li>
+                        <!-- Slide 3 -->
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p>"Langganan cetak foto dan jilid laporan kantor di sini. Ramah dan pengerjaannya profesional."</p>
+                                <h4>Dedi Pratama</h4>
+                                <span>Pegawai Swasta</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="carousel-button carousel-button--left" id="prevBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button carousel-button--right" id="nextBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="carousel-nav" id="carouselNav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="emoji">💳</div>
-            <h3>Top Up E-Wallet</h3>
-            <p>Melayani pengisian saldo dompet digital.</p>
+    <!-- Form Kontak Section -->
+    <section id="contact" class="contact section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Kirimkan pertanyaan atau informasi pemesanan Anda melalui formulir di bawah ini</p>
+            </div>
+            <div class="contact-wrapper">
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div id="alertMessage" class="alert-message"></div>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap *</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda">
+                        <small class="error-text" id="nameError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor HP / WhatsApp *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Contoh: 081556475839">
+                        <small class="error-text" id="phoneError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pertanyaan / Keperluan *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tuliskan pertanyaan atau kebutuhan cetak Anda di sini..."></textarea>
+                        <small class="error-text" id="messageError"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="emoji">✏️</div>
-            <h3>Alat Tulis Kantor</h3>
-            <p>Menyediakan berbagai perlengkapan sekolah dan kantor.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container grid-footer">
+            <div class="footer-info">
+                <h3>RAFIF COPY CENTER</h3>
+                <p>Pusat Fotokopi, Digital Printing, Pengetikan, Scan, Cetak Foto, dan Alat Tulis Kantor Terpercaya di Tulungagung.</p>
+                <p><strong>NPWP:</strong> 83.368.774.2-629.000</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Informasi Kontak</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Jl. Puskesmas - Banjarejo - Rejotangan - Tulungagung</p>
+                <p><i class="fa-solid fa-phone"></i> 081 556 475 839 / 0821-4143-0354</p>
+                <p><i class="fa-solid fa-envelope"></i> Banjarejocopy@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <h4>Media Sosial & Peta</h4>
+                <div class="social-links">
+                    <a href="mailto:Banjarejocopy@gmail.com" title="Email Kami"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/6281556475839" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/H5a5d38ygu1jLqtY7" target="_blank" title="Google Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+                </div>
+                <div class="map-link">
+                    <a href="https://maps.app.goo.gl/H5a5d38ygu1jLqtY7" target="_blank" class="btn-map">
+                        <i class="fa-solid fa-location-arrow"></i> Buka Alamat di Google Maps
+                    </a>
+                </div>
+            </div>
         </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Rafif Copy Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    </div>
-</section>
-
-<section class="testimoni" id="ulasan">
-    <h2>Ulasan Pelanggan</h2>
-
-    <div class="review">
-        <p id="reviewText">
-            "Pelayanannya ramah dan hasil cetaknya bagus."
-        </p>
-        <h4 id="reviewName">Pelanggan Banjarejo Copy</h4>
-
-        <button id="prev">❮</button>
-        <button id="next">❯</button>
-    </div>
-</section>
-
-<section id="kontak" class="contact">
-    <h2>Hubungi Kami</h2>
-
-    <div class="contact-info">
-        <p>📞 WhatsApp: 0821 4153 0354</p>
-        <p>✉️ Email: banjarejocopy@gmail.com</p>
-        <p>📍 Lokasi: Banjarejo</p>
-
-        <a href="https://maps.app.goo.gl/TvUwFHbgMeujrUXj8"
-           target="_blank" class="btn">
-            Lihat Lokasi
-        </a>
-    </div>
-
-    <form id="contactForm">
-        <input type="text" id="nama"
-            placeholder="Nama lengkap">
-
-        <input type="tel" id="hp"
-            placeholder="Nomor HP">
-
-        <textarea id="pesan"
-            placeholder="Pertanyaan atau pesan"></textarea>
-
-        <button type="submit" class="btn">
-            Kirim Pesan
-        </button>
-
-        <p id="message"></p>
-    </form>
-</section>
-
-<footer>
-    <h3>Banjarejo Copy</h3>
-    <p>Solusi kebutuhan dokumen dan perlengkapan kantor Anda.</p>
-    <p>&copy; <span id="year"></span> Banjarejo Copy.</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
