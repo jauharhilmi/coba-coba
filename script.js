@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
 
-    // Cek preferensi tersimpan di LocalStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ===================================================
-       2. Scroll Reveal Animation (Animasi saat di-scroll)
+       2. Scroll Reveal Animation
        =================================================== */
     const revealElements = document.querySelectorAll('.reveal');
 
@@ -47,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger saat halaman pertama kali dimuat
+    revealOnScroll();
 
 
     /* ===================================================
-       3. Menu Hamburger (Mobile Navigation Toggle)
+       3. Menu Hamburger (Mobile Toggle)
        =================================================== */
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -79,7 +78,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ===================================================
-       4. Form Validation (Validasi Form Kontak)
+       4. Filter Ulasan Shopee
+       =================================================== */
+    const tagBtns = document.querySelectorAll('.tag-btn');
+    const reviewCards = document.querySelectorAll('.shopee-review-card');
+
+    tagBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tagBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            reviewCards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else if (filter === 'photo' && card.getAttribute('data-has-photo') === 'true') {
+                    card.style.display = 'block';
+                } else if (filter === '5star' && card.getAttribute('data-rating') === '5') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+    /* ===================================================
+       5. Form Ulasan Mandiri Ala Shopee
+       =================================================== */
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewAlert = document.getElementById('reviewAlert');
+    const reviewsContainer = document.getElementById('reviewsContainer');
+
+    reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('reviewName').value.trim();
+        const product = document.getElementById('reviewProduct').value.trim();
+        const rating = parseInt(document.getElementById('reviewRating').value);
+        const productPhoto = document.getElementById('reviewProductPhoto').value.trim() || 'https://via.placeholder.com/100x100?text=Foto+Produk';
+        const comment = document.getElementById('reviewComment').value.trim();
+
+        let starsHtml = '';
+        for (let i = 0; i < 5; i++) {
+            if (i < rating) {
+                starsHtml += '<i class="fa-solid fa-star"></i>';
+            } else {
+                starsHtml += '<i class="fa-regular fa-star"></i>';
+            }
+        }
+
+        const dateStr = new Date().toISOString().split('T')[0];
+
+        const newReviewCard = document.createElement('div');
+        newReviewCard.className = 'shopee-review-card';
+        newReviewCard.setAttribute('data-rating', rating);
+        newReviewCard.setAttribute('data-has-photo', 'true');
+        newReviewCard.innerHTML = `
+            <div class="user-meta">
+                <img src="https://via.placeholder.com/50?text=User" class="avatar" alt="${name}">
+                <div>
+                    <h4>${name}</h4>
+                    <div class="stars-sm">${starsHtml}</div>
+                    <span class="review-time">${dateStr} | Variasi: ${product}</span>
+                </div>
+            </div>
+            <div class="review-body">
+                <p class="review-text">${comment}</p>
+                <div class="product-photos">
+                    <div class="photo-item">
+                        <img src="${productPhoto}" alt="Foto ${product}">
+                    </div>
+                </div>
+            </div>
+        `;
+
+        reviewsContainer.prepend(newReviewCard);
+
+        reviewAlert.textContent = 'Ulasan Shopee Anda berhasil dipublikasikan!';
+        reviewAlert.classList.add('success');
+        reviewForm.reset();
+    });
+
+
+    /* ===================================================
+       6. Form Validation Kontak
        =================================================== */
     const contactForm = document.getElementById('contactForm');
     const nameInput = document.getElementById('name');
@@ -125,111 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alertMessage.classList.add('success');
             contactForm.reset();
         }
-    });
-
-
-    /* ===================================================
-       5. Interactive Slider / Testimonial Carousel
-       =================================================== */
-    const track = document.getElementById('testimonialTrack');
-    let slides = Array.from(track.children);
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const dotsNav = document.getElementById('carouselNav');
-    let dots = Array.from(dotsNav.children);
-
-    let currentIndex = 0;
-
-    const updateSlidePosition = (index) => {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('current-slide'));
-        if (dots[index]) {
-            dots[index].classList.add('current-slide');
-        }
-    };
-
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-        updateSlidePosition(currentIndex);
-    });
-
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-        updateSlidePosition(currentIndex);
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlidePosition(currentIndex);
-        });
-    });
-
-    setInterval(() => {
-        slides = Array.from(track.children);
-        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-        updateSlidePosition(currentIndex);
-    }, 5000);
-
-
-    /* ===================================================
-       6. Form Tambah Ulasan Mandiri (User Review Form)
-       =================================================== */
-    const reviewForm = document.getElementById('reviewForm');
-    const reviewAlert = document.getElementById('reviewAlert');
-
-    reviewForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('reviewName').value.trim();
-        const role = document.getElementById('reviewRole').value.trim() || 'Pelanggan';
-        const rating = parseInt(document.getElementById('reviewRating').value);
-        const photo = document.getElementById('reviewPhoto').value.trim() || 'https://via.placeholder.com/80';
-        const comment = document.getElementById('reviewComment').value.trim();
-
-        let starsHtml = '';
-        for (let i = 0; i < 5; i++) {
-            if (i < rating) {
-                starsHtml += '<i class="fa-solid fa-star"></i>';
-            } else {
-                starsHtml += '<i class="fa-regular fa-star"></i>';
-            }
-        }
-
-        const newSlide = document.createElement('li');
-        newSlide.className = 'carousel-slide';
-        newSlide.innerHTML = `
-            <div class="testimonial-card">
-                <div class="testimonial-avatar">
-                    <img src="${photo}" alt="${name}">
-                </div>
-                <div class="stars">${starsHtml}</div>
-                <p>"${comment}"</p>
-                <h4>${name}</h4>
-                <span>${role}</span>
-            </div>
-        `;
-
-        track.appendChild(newSlide);
-
-        const newDot = document.createElement('button');
-        newDot.className = 'carousel-indicator';
-        const newIndex = slides.length;
-        newDot.addEventListener('click', () => {
-            currentIndex = newIndex;
-            updateSlidePosition(currentIndex);
-        });
-        dotsNav.appendChild(newDot);
-
-        slides = Array.from(track.children);
-        dots = Array.from(dotsNav.children);
-
-        reviewAlert.textContent = 'Ulasan Anda berhasil ditambahkan! Terima kasih atas kepercayaannya.';
-        reviewAlert.classList.add('success');
-        reviewForm.reset();
-
-        currentIndex = slides.length - 1;
-        updateSlidePosition(currentIndex);
     });
 
 });
