@@ -236,14 +236,13 @@ img {
     color: var(--text-color);
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section dengan Animasi Latar Belakang Bergerak --- */
 .hero {
     min-height: 100vh;
     position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #1d3557, #457b9d, #1d3557);
+    background-size: 400% 400%;
+    animation: gradientBG 50s ease infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -251,15 +250,67 @@ img {
     color: #ffffff;
     padding-top: 70px;
     z-index: 1;
+    overflow: hidden;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animasi Partikel Bergerak di Dalam Background */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    bottom: -150px;
+    border-radius: 50%;
+    animation: animateParticles 25s linear infinite;
+}
+
+.particle:nth-child(1) { left: 10%; width: 40px; height: 40px; animation-duration: 18s; }
+.particle:nth-child(2) { left: 20%; width: 20px; height: 20px; animation-duration: 22s; animation-delay: 2s; }
+.particle:nth-child(3) { left: 35%; width: 50px; height: 50px; animation-duration: 12s; animation-delay: 4s; }
+.particle:nth-child(4) { left: 50%; width: 25px; height: 25px; animation-duration: 25s; animation-delay: 0s; }
+.particle:nth-child(5) { left: 65%; width: 35px; height: 35px; animation-duration: 15s; animation-delay: 3s; }
+.particle:nth-child(6) { left: 80%; width: 60px; height: 60px; animation-duration: 20s; animation-delay: 1s; }
+.particle:nth-child(7) { left: 90%; width: 30px; height: 30px; animation-duration: 14s; animation-delay: 5s; }
+
+@keyframes animateParticles {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+/* Transparansi Overlay (Ubah angka 0.4 di bawah untuk menyesuaikan kegelapan) */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 23, 42, 0.1);
     z-index: 1;
 }
 
@@ -524,7 +575,779 @@ img {
     object-fit: cover;
 }
 
-/* --- Form Ulasan & Kontak --- */
+/* --- Form Ulasan & Form Kontak --- */
+.review-form-wrapper, .contact-wrapper {
+    max-width: 800px;
+    margin: 50px auto 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.review-form-wrapper h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+}
+
+.error-text {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.alert-message {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: none;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.alert-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+/* --- Footer & Direct Buttons --- */
+.footer {
+    background-color: #0b1329;
+    color: #ffffff;
+    padding-top: 60px;
+}
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-info h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.footer-info p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact h4,
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-contact p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.footer-contact i {
+    width: 20px;
+    color: var(--primary-color);
+}
+
+.footer-desc {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.direct-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-app {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #ffffff;
+    transition: var(--transition);
+}
+
+.btn-app i {
+    font-size: 1.1rem;
+}
+
+.btn-phone { background-color: #2b2d42; }
+.btn-phone:hover { opacity: 0.9; }
+
+.btn-whatsapp { background-color: #25d366; }
+.btn-whatsapp:hover { opacity: 0.9; }
+
+.btn-email { background-color: #ea4335; }
+.btn-email:hover { opacity: 0.9; }
+
+.btn-maps { background-color: var(--secondary-color); }
+.btn-maps:hover { opacity: 0.9; }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background-color: var(--bg-color);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: var(--transition);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .grid-2, .form-row, .shopee-summary {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .rating-big {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}/* --- Reset & Variables --- */
+:root {
+    --primary-color: #ee4d2d; 
+    --secondary-color: #1d3557;
+    --accent-color: #457b9d;
+    --dark-color: #1d3557;
+    --light-color: #f8f9fa;
+    --text-color: #2b2d42;
+    --text-muted: #6c757d;
+    --border-color: #e2e8f0;
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --font-main: 'Poppins', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    --primary-color: #ff6b4a;
+    --secondary-color: #38bdf8;
+    --dark-color: #f8f9fa;
+    --light-color: #1e293b;
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--light-color);
+}
+
+/* --- Scroll Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Section Title --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-outline {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: var(--dark-color);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* --- Header & Navbar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo span span {
+    color: var(--dark-color);
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* --- Hero Section (Tetap Transparan dengan Foto Latar & Overlay) --- */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 70px;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.55);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* --- Bagian Bawah Hero (About Section dengan Animasi Latar Belakang Bergerak) --- */
+.animated-bg-section {
+    position: relative;
+    background: linear-gradient(135deg, #1d3557, #457b9d, #1d3557);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+body.dark-mode .animated-bg-section {
+    background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animasi Partikel di Bagian Bawah Hero */
+.section-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    bottom: -150px;
+    border-radius: 50%;
+    animation: animateParticles 22s linear infinite;
+}
+
+.particle:nth-child(1) { left: 15%; width: 35px; height: 35px; animation-duration: 16s; }
+.particle:nth-child(2) { left: 30%; width: 20px; height: 20px; animation-duration: 20s; animation-delay: 2s; }
+.particle:nth-child(3) { left: 55%; width: 45px; height: 45px; animation-duration: 14s; animation-delay: 4s; }
+.particle:nth-child(4) { left: 75%; width: 25px; height: 25px; animation-duration: 24s; animation-delay: 1s; }
+.particle:nth-child(5) { left: 88%; width: 30px; height: 30px; animation-duration: 18s; animation-delay: 3s; }
+
+@keyframes animateParticles {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-900px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+/* Penyesuaian Teks pada Bagian Animasi Bawah Hero agar Kontras */
+.animated-bg-section .about-text h2,
+.animated-bg-section .about-text p,
+.animated-bg-section .badge {
+    color: #ffffff;
+}
+
+.animated-bg-section .about-text .badge {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.animated-bg-section .about-text .npwp-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* --- Services Section --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-service {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: var(--transition);
+}
+
+.card-service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card-img {
+    height: 180px;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 25px 20px;
+    position: relative;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- Shopee Testimonials Section --- */
+.shopee-summary {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.rating-big {
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+    padding-right: 40px;
+}
+
+.rating-big .score {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.rating-big .out-of {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.rating-big .stars {
+    color: #ffc107;
+    margin-top: 5px;
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-btn {
+    padding: 8px 18px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.tag-btn.active, .tag-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shopee-review-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.user-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-meta h4 {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+.stars-sm {
+    color: #ffc107;
+    font-size: 0.85rem;
+}
+
+.review-time {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.review-body p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.product-photos {
+    display: flex;
+    gap: 10px;
+}
+
+.photo-item {
+    width: 90px;
+    height: 90px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Form Ulasan & Form Kontak --- */
 .review-form-wrapper, .contact-wrapper {
     max-width: 800px;
     margin: 50px auto 0;
