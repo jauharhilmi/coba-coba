@@ -14,11 +14,25 @@
 </head>
 <body>
 
+    <!-- Global Animasi Background Seluruh Halaman -->
+    <div class="global-animation-bg">
+        <ul class="page-particles">
+            <li class="particle"></li>
+            <li class="particle"></li>
+            <li class="particle"></li>
+            <li class="particle"></li>
+            <li class="particle"></li>
+            <li class="particle"></li>
+            <li class="particle"></li>
+            <li class="particle"></li>
+        </ul>
+    </div>
+
     <!-- Header / Navbar Sticky -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="#hero" class="logo">
-                <img src="logo.png" alt="Logo Rafif Copy Center" class="logo-img" onerror="this.style.display='none'">
+                <img src="Rafif Copy Print Shop Logo.png" alt="Logo Rafif Copy Center" class="logo-img" onerror="this.style.display='none'">
                 <span>RAFIF <span>COPY CENTER</span></span>
             </a>
             
@@ -43,8 +57,9 @@
         </div>
     </header>
 
-    <!-- Hero Section (Background Foto Transparan/Overlay Bersih) -->
-    <section id="hero" class="hero" style="background-image: url('canon.jpg');">
+    <!-- Hero Section dengan Foto Background Transparan Responsif (Desktop & HP) -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-img"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content reveal">
             <h1>Solusi Cepat & Berkualitas untuk Semua Keperluan Cetak & Seluler Anda</h1>
@@ -57,20 +72,11 @@
         </div>
     </section>
 
-    <!-- About Section (Bagian di Bawah Hero dengan Animasi Latar Belakang Bergerak) -->
-    <section id="about" class="about section-padding animated-bg-section">
-        <!-- Animasi Partikel/Gradasi Bergerak di Bagian Bawah Hero -->
-        <ul class="section-particles">
-            <li class="particle"></li>
-            <li class="particle"></li>
-            <li class="particle"></li>
-            <li class="particle"></li>
-            <li class="particle"></li>
-        </ul>
-
-        <div class="container grid-2 reveal" style="position: relative; z-index: 2;">
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container grid-2 reveal">
             <div class="about-image">
-                <img src="toko.jpg" alt="Rafif Copy Center" onerror="this.src='https://via.placeholder.com/600x400?text=Foto+Toko+Rafif'">
+                <img src="Capture rafif.PNG" alt="Rafif Copy Center" onerror="this.src='https://via.placeholder.com/600x400?text=Foto+Toko+Rafif'">
             </div>
             <div class="about-text">
                 <span class="badge">Tentang Usaha</span>
@@ -85,7 +91,7 @@
     </section>
 
     <!-- Services / Products Section -->
-    <section id="services" class="services section-padding bg-light">
+    <section id="services" class="services section-padding">
         <div class="container">
             <div class="section-title reveal">
                 <h2>Layanan & Produk Kami</h2>
@@ -95,7 +101,7 @@
                 <!-- Item 1: Fotokopi -->
                 <div class="card-service reveal">
                     <div class="card-img">
-                        <img src="fotokopi.jpg" alt="Fotokopi & Print Dokumen" onerror="this.src='https://via.placeholder.com/400x250?text=Fotokopi'">
+                        <img src="erasebg-transformed.png" alt="Fotokopi & Print Dokumen" onerror="this.src='https://via.placeholder.com/400x250?text=Fotokopi'">
                     </div>
                     <div class="card-body">
                         <div class="icon-box"><i class="fa-solid fa-copy"></i></div>
@@ -107,7 +113,7 @@
                 <!-- Item 2: Penjilidan Buku -->
                 <div class="card-service reveal">
                     <div class="card-img">
-                        <img src="jilid.jpg" alt="Penjilidan Buku" onerror="this.src='https://via.placeholder.com/400x250?text=Penjilidan+Buku'">
+                        <img src="gambar buku di jilid.jpg" alt="Penjilidan Buku" onerror="this.src='https://via.placeholder.com/400x250?text=Penjilidan+Buku'">
                     </div>
                     <div class="card-body">
                         <div class="icon-box"><i class="fa-solid fa-book"></i></div>
@@ -119,7 +125,7 @@
                 <!-- Item 3: Pulsa & Paket Data -->
                 <div class="card-service reveal">
                     <div class="card-img">
-                        <img src="pulsa.jpg" alt="Isi Pulsa & Paket Data" onerror="this.src='https://via.placeholder.com/400x250?text=Pulsa+&+Paket+Data'">
+                        <img src="gambar provider indo.jpeg" alt="Isi Pulsa & Paket Data" onerror="this.src='https://via.placeholder.com/400x250?text=Pulsa+&+Paket+Data'">
                     </div>
                     <div class="card-body">
                         <div class="icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
@@ -131,7 +137,7 @@
                 <!-- Item 4: Kartu Perdana -->
                 <div class="card-service reveal">
                     <div class="card-img">
-                        <img src="perdana.jpg" alt="Kartu Perdana" onerror="this.src='https://via.placeholder.com/400x250?text=Kartu+Perdana'">
+                        <img src="kartu perdana.jpg" alt="Kartu Perdana" onerror="this.src='https://via.placeholder.com/400x250?text=Kartu+Perdana'">
                     </div>
                     <div class="card-body">
                         <div class="icon-box"><i class="fa-solid fa-sim-card"></i></div>
@@ -171,7 +177,7 @@
     <section id="testimonials" class="testimonials section-padding">
         <div class="container">
             <div class="section-title reveal">
-                <h2>Ulasan Pembeli (Shopee Style)</h2>
+                <h2>Ulasan Pembeli </h2>
                 <p>Ulasan jujur pembeli lengkap dengan foto barang/produk yang dibeli</p>
             </div>
             
@@ -299,7 +305,7 @@
     </section>
 
     <!-- Form Kontak Section -->
-    <section id="contact" class="contact section-padding bg-light">
+    <section id="contact" class="contact section-padding">
         <div class="container">
             <div class="section-title reveal">
                 <h2>Hubungi Kami</h2>
